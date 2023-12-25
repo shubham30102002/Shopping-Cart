@@ -8,6 +8,8 @@ const Product = ({ post }) => {
 
   const addToCart = () => {
     dispatch(add(post));
+    console.log("printing cart");
+    console.log(cart);
     toast.success("Item added to Cart");
   }
 

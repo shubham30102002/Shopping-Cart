@@ -2,8 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
+import store from "./redux/Store";
 import { Provider } from "react-redux";
-import { store } from "./redux/Store";
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
 import { BrowserRouter } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
@@ -12,8 +14,10 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Provider store={store}>
-      <App />
-      <Toaster/>
+      <PersistGate loading={null} persistor={persistStore(store)}>
+        <App />
+        <Toaster/>
+      </PersistGate>
     </Provider>
   </BrowserRouter>
 
