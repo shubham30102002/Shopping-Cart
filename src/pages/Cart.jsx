@@ -5,6 +5,7 @@ import CartItem from "../components/CartItem";
 
 const Cart = () => {
   const { cart = [] } = useSelector((state) => state);
+  console.log(cart);
   const [totalAmount, setTotalAmount] = useState(0);
 
   useEffect(() => {
