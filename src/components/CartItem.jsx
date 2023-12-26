@@ -10,19 +10,19 @@ const CartItem = ({item, itemIndex}) => {
     toast.error("Item Removed")
   }
   return (
-  <div>
-    <div>
-      <div>
-        <img src={item.image} alt="Product Image" />
+  <div className="flex ">
+    <div className="flex justify-center items-center border-b-2 border-gray-500">
+      <div className="h-[180px]">
+        <img src={item.image} alt="Product Image" className="h-full w-full " />
       </div>
       <div>
-        <h1>{item.title}</h1>
+        <h1 className="text-gray-700 font-semibold text-lg text-left truncate w-40 mt-1">{item.title}</h1>
         <h1>{item.description}</h1>
-        <div>
-          <p>{item.price}</p>
+        <div className="flex">
+          <p className="text-green-600 font-semibold justify-between">${item.price}</p>
           <div 
           onClick={removeFromCart}>
-            <MdDeleteSweep />
+            <MdDeleteSweep className="rounded-full bg-red-200 cursor-pointer " />
           </div>
         </div>
       </div>

@@ -8,18 +8,21 @@ import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App ">
       <Provider store={store}>
         <BrowserRouter>
-          <Navbar />
+          <div className=" bg-slate-900">
+            <Navbar />
+
+          </div>
           <Routes>
             <Route path='/' element={<Home />}></Route>
             <Route path='/cart' element={<Cart />}></Route>
           </Routes>
-          <Toaster/>
+          <Toaster />
         </BrowserRouter>
       </Provider>
-      
+
     </div>
   );
 }
