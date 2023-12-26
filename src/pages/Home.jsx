@@ -1,49 +1,16 @@
-import { useEffect, useState } from "react";
-import Spinner from "../components/Spinner";
-import Product from "../components/Product";
+import React from 'react';
+import Products from '../components/Products';
 
 const Home = () => {
-  const API_URL = "https://fakestoreapi.com/products";
-  
-  const [loading, setLoading] = useState(false);
-  const [posts, setPosts] = useState([]);
-
-  async function fetchProductData(){
-    setLoading(true);
-    try{
-      const res = await fetch(API_URL);
-      const data = await res.json();
-
-      setPosts(data);
-    }catch(error){
-      console.log("error occured!");
-      setPosts([]);
-    }
-    setLoading(false);
-  } 
-
-  useEffect(() => {
-    fetchProductData();
-  },[])
-
   return (
-  <div>
-    {
-      loading ? <Spinner /> : 
-      posts.length> 0 ? 
-      (<div>
-        {
-        posts.map((post) => (
-          <Product key={post.id} post={post}/>
-        ))
-        }
-      </div>) :
-      <div>
-        <p>No Data Found</p>
-      </div> 
-    }
-  </div>
+    <div>
+        <h2 className='heading'>Welcome to the Redux toolkit store</h2>
+        <section>
+            <h3>Products</h3>
+            <Products />
+        </section>
+    </div>
   )
-};
+}
 
 export default Home;

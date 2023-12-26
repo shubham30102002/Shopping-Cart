@@ -1,31 +1,20 @@
-import { FaCartShopping } from "react-icons/fa6";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+  const items = useSelector((state) => state.cart);
+  
   return (
-    <div>
-      <div className="flex flex-row justify-between">
-        <NavLink to="/">
-          <div>
-            <img src="../logo.png" className="h-14" />
-
-          </div>
-        </NavLink>
+    <div style={{ display: 'flex', alignItems:'center', justifyContent: 'space-between' }}>
+        <span className='logo'>REDUX STORE</span>
         <div>
-          <NavLink to="/">
-            <p>Home</p>
-          </NavLink>
-
-          <NavLink to="/cart">
-            <div>
-              <FaCartShopping />
-            </div>
-          </NavLink>
-
+            <Link className="navLink" to='/'>Home</Link>
+            <Link className="navLink" to='/cart'>Cart</Link>
+            <span className='cartCount'>Cart items: {items.length}</span>
         </div>
-      </div>
     </div>
-  )
-};
+  );
+}
 
 export default Navbar;

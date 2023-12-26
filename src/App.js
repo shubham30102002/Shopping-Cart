@@ -1,10 +1,10 @@
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Cart from "./pages/Cart";
+import Home from './pages/Home';
+import Cart from './pages/Cart';
+import Navbar from './components/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './redux/store';
-import { Toaster } from "react-hot-toast";
+import store from './store/store';
+import './App.css';
 
 function App() {
   return (
@@ -16,11 +16,10 @@ function App() {
             <Route path='/' element={<Home />}></Route>
             <Route path='/cart' element={<Cart />}></Route>
           </Routes>
-          <Toaster/>
         </BrowserRouter>
       </Provider>
-      
     </div>
   );
 }
+
 export default App;
