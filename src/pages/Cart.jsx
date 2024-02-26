@@ -37,7 +37,10 @@ const Cart = () => {
                 Total Amount:
                 <span className="font-bold">${totalAmount}</span>
               </p>
-              <button className="bg-green-700 text-white w-[100%] py-2 font-semibold rounded-md ">Checkout Now</button>
+              <button className="bg-green-700 text-white w-[100%] py-2 font-semibold rounded-md
+               hover:bg-white hover:text-green-700 transition duration-300 ">
+                Checkout Now
+              </button>
             </div>
           </div>
         </div>
@@ -47,7 +50,11 @@ const Cart = () => {
             <h1 className="font-semibold mb-5" >Your cart is Empty!</h1>
             <Link to={"/"}>
               <button className="text-white bg-green-700 px-7 py-2
-             rounded-md cursor-pointer">Shop Now</button>
+             rounded-md cursor-pointer
+              hover:bg-white hover:text-green-700
+              transition duration-300">
+                Shop Now
+              </button>
             </Link>
           </div>
         </div>

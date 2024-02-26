@@ -6,6 +6,7 @@ export const CartSlice = createSlice({
     reducers : {
         add : (state, actions) => {
             state.push(actions.payload);
+            //payload is used to access the post passed in it
         },
         remove: (state,actions) => {
             return state.filter((item) => item.id !== actions.payload);

@@ -16,6 +16,7 @@ const Product = ({ post }) => {
     toast.error("Item removed from Cart");
   }
 
+  //use to keep track if product is already present in the cart or not
   const isItemInCart = cart && cart.some((p) => p.id === post.id);
 
   return (
@@ -36,7 +37,7 @@ const Product = ({ post }) => {
       </div>
 
       <div className="h-[180px]">
-        <img src={`${post.image}`} alt="product image" className="h-full w-full " />
+        <img src={post.image} alt="product image" className="h-full w-full " />
       </div>
 
       <div className="flex justify-between gap-11 items-center w-full mt-5">
